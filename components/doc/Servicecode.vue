@@ -60,7 +60,7 @@ const formattedCode = computed(() => {
   const method = currentApi.method || 'GET'
   const serviceid = props.serviceId
   const path=currentApi.path
-  const baseUrl = 'https://api.platform.archivemodel.cn/services/'
+  const baseUrl = 'https://api.newpadm.archivemodel.cn/services/'
 
   //if(method=='POST'||'PUT'){
           const bodyInline =  parseRequestBodyInlineObject(currentApi?.requestBody);

@@ -28,7 +28,7 @@ const props = defineProps({
 const computedMenuItems = computed(() => {
   const items = [...props.menuItems];
 
-  if (user.value?.scope === 'admin' && items[0].id==='setting') {
+  if (user.value?.scope === 'superadmin' && items[0].id==='setting') {
     items.push(
       {
         id: "users",
@@ -44,7 +44,7 @@ const computedMenuItems = computed(() => {
       }
     );
   }
-  if (user.value?.scope === 'admin' && items[0].id==='services') {
+  if ((user.value?.scope === 'admin' || user.value?.scope === 'superadmin') && items[0].id==='services') {
     items.push(
         {
         id: "assistants",

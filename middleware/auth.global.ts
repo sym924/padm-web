@@ -26,7 +26,7 @@ if (isServiceSetting && user.value?.scope === 'user') {
 if(to.path.includes('/users') && user.value?.scope==='user'){
   return navigateTo('/setting');
 }
-if(to.path.includes('/monitor') && user.value?.scope==='user'){
+if(to.path.includes('/monitor') && (user.value?.scope === 'user' || user.value?.scope === 'admin')){
   return navigateTo('/setting');
 }
 if(to.path.includes('/assistants') && user.value?.scope==='user'){

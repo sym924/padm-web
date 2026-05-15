@@ -73,7 +73,7 @@ const menuLoading = computed(() => {
     console.log("scope:", user.value?.scope);
     let baseMenus = [...menus];
     let manageMenus = [...manage];
-    if (user.value?.scope === 'admin') {
+    if (user.value?.scope === 'admin' || user.value?.scope === 'superadmin') {
         const hasAssistants = baseMenus.some(m => m.id === 'assistants');
 
         if (!hasAssistants) {
@@ -86,20 +86,22 @@ const menuLoading = computed(() => {
                 path: "/assistants",
             });
         }
-    manageMenus.push(
-      {
-        id: "users",
-        name: "用户管理",
-        icon: "🙂",
-        path: "/users",
-      },
-      {
-        id: "monitor",
-        name: "控制中心",
-        icon: "🕵️",
-        path: "/monitor",
-      }
-    );
+        if (user.value?.scope === 'superadmin') {
+            manageMenus.push(
+                {
+                    id: "users",
+                    name: "用户管理",
+                    icon: "🙂",
+                    path: "/users",
+                },
+                {
+                    id: "monitor",
+                    name: "控制中心",
+                    icon: "🕵️",
+                    path: "/monitor",
+                }
+            );
+        }
 
     }
     const inMenu = baseMenus.some(obj => 

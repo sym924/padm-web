@@ -34,7 +34,7 @@
                                 开始体验
                                 </NuxtLink>
                                 <NuxtLink
-                                 to="/iam/login"
+                                 to="/doc"
                                  class="rounded-lg border border-gray-600 px-6 py-3 text-gray-200 hover:bg-white/5 transition"
                                 >
                                 API 文档 →

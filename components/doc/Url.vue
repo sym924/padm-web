@@ -4,7 +4,7 @@
             {{ currentApi?.method || 'GET' }}
         </Badge>
         <span ref="idElement" class="dark:text-gray-400 text-gray-500">
-            https://api.platform.archivemodel.cn{{ currentApi?.path || '' }}
+            https://api.newpadm.archivemodel.cn{{ currentApi?.path || '' }}
         </span>
         <Icon name="solar:copy-line-duotone" class="cursor-pointer hover:text-blue-500 transition-colors bg-green-600">
         </Icon>
